@@ -1,0 +1,40 @@
+package:
+   name: scumba
+   version: {{ GIT_DESCRIBE_TAG }}
+
+source:
+   path: ../../..
+
+build:
+  number: {{ GIT_DESCRIBE_NUMBER|int }}
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  # build and run dependencies are duplicated to avoid setuptools issues
+  # when we also set install_requires in setup.py
+  build:
+    # probably going to need these at some point
+    - {{ compiler('c') }}      # [not (armv6l or armv7l or aarch64)]
+    - {{ compiler('cxx') }}    # [not (armv6l or armv7l or aarch64)]
+    - git
+  host:
+    - python
+    - numba
+    - scipy
+    - setuptools
+  run:
+    - python
+    - numba
+    - scipy
+
+test:
+  requires:
+    - scipy
+    - setuptools
+    - faulthandler             # [py27 and (not (armv6l or armv7l))]
+
+about:
+  home: https://github.com/numba/scumba
+  license: BSD
+  license_file: LICENSE
+  summary: Scumba extends Numba to make it aware of SciPy
