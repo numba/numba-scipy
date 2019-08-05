@@ -2,8 +2,8 @@ from setuptools import setup
 import versioneer
 
 metadata = dict(
-    name='numba_scipy',
-    description="numba_scipy extends Numba to make it aware of SciPy",
+    name='numba-scipy',
+    description="numba-scipy extends Numba to make it aware of SciPy",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
 
@@ -22,8 +22,8 @@ metadata = dict(
     scripts=[],
     author="Anaconda, Inc.",
     author_email="numba-users@continuum.io",
-    url="https://github.com/numba/numba_scipy",
-    download_url="https://github.com/numba/numba_scipy",
+    url="https://github.com/numba/numba-scipy",
+    download_url="https://github.com/numba/numba-scipy",
     packages=['numba_scipy'],
     setup_requires=[],
     install_requires=[],
