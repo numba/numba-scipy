@@ -27,6 +27,7 @@ requirements:
 test:
   requires:
     - scipy
+    - pytest
     - setuptools
     - faulthandler             # [py27 and (not (armv6l or armv7l))]
 
