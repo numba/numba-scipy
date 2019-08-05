@@ -13,9 +13,6 @@ requirements:
   # build and run dependencies are duplicated to avoid setuptools issues
   # when we also set install_requires in setup.py
   build:
-    # probably going to need these at some point
-    - {{ compiler('c') }}      # [not (armv6l or armv7l or aarch64)]
-    - {{ compiler('cxx') }}    # [not (armv6l or armv7l or aarch64)]
     - git
   host:
     - python
