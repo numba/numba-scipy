@@ -1,6 +1,8 @@
 from setuptools import setup
 import versioneer
 
+_install_requires = ['scipy>=0.16', 'numba>=0.45']
+
 metadata = dict(
     name='numba-scipy',
     description="numba-scipy extends Numba to make it aware of SciPy",
@@ -26,7 +28,7 @@ metadata = dict(
     download_url="https://github.com/numba/numba-scipy",
     packages=['numba_scipy'],
     setup_requires=[],
-    install_requires=[],
+    install_requires=_install_requires,
     license="BSD",
     zip_safe=False,
     )
