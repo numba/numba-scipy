@@ -1,0 +1,2 @@
+include versioneer.py
+include numba_scipy/_version.py
