@@ -1,5 +1,5 @@
 package:
-   name: scumba
+   name: numba_scipy
    version: {{ GIT_DESCRIBE_TAG }}
 
 source:
@@ -31,7 +31,7 @@ test:
     - faulthandler             # [py27 and (not (armv6l or armv7l))]
 
 about:
-  home: https://github.com/numba/scumba
+  home: https://github.com/numba/numba_scipy
   license: BSD
   license_file: LICENSE
-  summary: Scumba extends Numba to make it aware of SciPy
+  summary: numba_scipy extends Numba to make it aware of SciPy

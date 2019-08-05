@@ -1,2 +1,2 @@
 include versioneer.py
-include scumba/_version.py
+include numba_scipy/_version.py
