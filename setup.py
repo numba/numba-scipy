@@ -29,6 +29,11 @@ metadata = dict(
     packages=['numba_scipy'],
     setup_requires=[],
     install_requires=_install_requires,
+    entry_points={
+        "numba_extensions": [
+            "init = numba_scipy:_init_extension",
+        ],
+    },
     license="BSD",
     zip_safe=False,
     )
