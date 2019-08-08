@@ -1,0 +1,16 @@
+jobs:
+# Mac and Linux use the same template with different matrixes
+- template: buildscripts/azure/azure-linux-macos.yml
+  parameters:
+    name: macOS
+    vmImage: xcode9-macos10.13
+
+- template: buildscripts/azure/azure-linux-macos.yml
+  parameters:
+    name: Linux
+    vmImage: ubuntu-16.04
+
+- template: buildscripts/azure/azure-windows.yml
+  parameters:
+    name: Windows
+    vmImage: vs2017-win2016
