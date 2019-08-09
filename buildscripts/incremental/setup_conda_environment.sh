@@ -29,12 +29,25 @@ conda list
 conda remove --all -q -y -n $CONDA_ENV
 
 # Create a base env
-conda create -n $CONDA_ENV -q -y python=$PYTHON numpy=$NUMPY scipy=$SCIPY numba pytest pip
+conda create -n $CONDA_ENV -q -y python=$PYTHON numpy=$NUMPY scipy=$SCIPY pytest pip
 
 # Activate
 set +v
 source activate $CONDA_ENV
 set -v
+
+# 32bit linux needs the numba channel to get a conda package as the distro
+# channels stopped shipping for 32bit linux packages, this branching is
+# superfluous but sets up for adding later conditional package installation.
+if [[ $(uname) == Linux ]]; then
+    if [[ "$CONDA_SUBDIR" == "linux-32" || "$BITS32" == "yes" ]] ; then
+        $CONDA_INSTALL -c numba numba
+    else
+        $CONDA_INSTALL numba
+    fi
+elif  [[ $(uname) == Darwin ]]; then
+    $CONDA_INSTALL numba
+fi
 
 # environment dump for debug
 echo "-------------------------------------------------------------------------"
