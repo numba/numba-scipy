@@ -2,8 +2,8 @@ jobs:
 # Mac and Linux use the same template with different matrices
 - template: buildscripts/azure/azure-linux-macos.yml
   parameters:
-    name: macOS
-    vmImage: xcode9-macos10.13
+    name: Linux
+    vmImage: ubuntu-16.04
     matrix:
       py37_np116_sp11:
         PYTHON: '3.7'
@@ -19,8 +19,8 @@ jobs:
 
 - template: buildscripts/azure/azure-linux-macos.yml
   parameters:
-    name: Linux
-    vmImage: ubuntu-16.04
+    name: macOS
+    vmImage: xcode9-macos10.13
     matrix:
       py37_np116_sp11:
         PYTHON: '3.7'
