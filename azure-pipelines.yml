@@ -13,7 +13,7 @@ jobs:
       py37_np115_sp11_32bit:
         PYTHON: '3.7'
         NUMPY: '1.15'
-        SCIPY: '1.0.0'
+        SCIPY: '1.1'
         CONDA_ENV: 'testenv'
         BITS32: yes
 

@@ -28,9 +28,5 @@ jobs:
 
     - script: |
         call activate %CONDA_ENV%
-        pushd bin
-        numba -s
-        popd
-        python -m numba.tests.test_runtests
-        python runtests.py -m 2 -b -- numba.tests
+        buildscripts\\incremental\\test.cmd
       displayName: 'Test'
