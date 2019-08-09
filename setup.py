@@ -29,6 +29,12 @@ metadata = dict(
     packages=['numba_scipy'],
     setup_requires=[],
     install_requires=_install_requires,
+    extras_require={
+        "dev": [
+            "pytest",
+            "hypothesis[numpy]",
+        ],
+    },
     license="BSD",
     zip_safe=False,
     )
