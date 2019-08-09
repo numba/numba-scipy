@@ -1,6 +1,7 @@
 parameters:
   name: ''
   vmImage: ''
+  matrix: []
 
 jobs:
 - job: ${{ parameters.name }}
@@ -9,11 +10,7 @@ jobs:
   strategy:
     maxParallel: 11
     matrix:
-      py37_np116_sp016:
-        PYTHON: '3.7'
-        NUMPY: '1.16'
-        SCIPY: '0.16'
-        CONDA_ENV: 'testenv'
+      ${{ insert }}: ${{ parameters.matrix }}
 
   steps:
     - script: |
