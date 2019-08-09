@@ -6,9 +6,7 @@ source activate $CONDA_ENV
 set -v -e
 
 # Run system info tool
-pushd bin
 numba -s
-popd
 
 # switch off color messages
 export NUMBA_DISABLE_ERROR_MESSAGE_HIGHLIGHTING=1
