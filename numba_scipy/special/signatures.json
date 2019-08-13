@@ -1,0 +1,1382 @@
+{
+    "agm": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "bdtr": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "bdtrc": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "bdtri": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "bdtrik": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "bdtrin": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "bei": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "beip": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ber": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "berp": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "besselpoly": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "beta": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "betainc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "betaincinv": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "betaln": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "binom": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "boxcox": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "boxcox1p": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "btdtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "btdtri": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "btdtria": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "btdtrib": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "cbrt": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chdtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chdtrc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chdtri": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chdtriv": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chndtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chndtridf": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chndtrinc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "chndtrix": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "cosdg": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "cosm1": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "cotdg": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "dawsn": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ellipe": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ellipeinc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ellipkinc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ellipkm1": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "entr": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "erf": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "erfc": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "erfcx": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "erfi": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "eval_chebyc": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_chebys": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_chebyt": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_chebyu": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_gegenbauer": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "eval_genlaguerre": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "eval_hermite": {
+        "": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_hermitenorm": {
+        "": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_jacobi": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "eval_laguerre": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_legendre": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_sh_chebyt": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_sh_chebyu": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "eval_sh_jacobi": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "eval_sh_legendre": {
+        "double|double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long|double": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "exp1": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "exp10": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "exp2": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "expi": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "expit": {
+        "double": [
+            "c_double",
+            "c_double"
+        ],
+        "float": [
+            "c_float",
+            "c_float"
+        ]
+    },
+    "expm1": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "expn": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "exprel": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "fdtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "fdtrc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "fdtri": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "fdtridfd": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gamma": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gammainc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gammaincc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gammainccinv": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gammaincinv": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gammaln": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gammasgn": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gdtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gdtrc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gdtria": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gdtrib": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "gdtrix": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "huber": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "hyp0f1": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "hyp1f1": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "hyp2f1": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "hyperu": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "i0": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "i0e": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "i1": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "i1e": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "inv_boxcox": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "inv_boxcox1p": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "it2struve0": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "itmodstruve0": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "itstruve0": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "iv": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ive": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "j0": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "j1": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "jv": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "jve": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "k0": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "k0e": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "k1": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "k1e": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "kei": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "keip": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ker": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "kerp": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "kl_div": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "kn": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "kolmogi": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "kolmogorov": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "kv": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "kve": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "log1p": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "log_ndtr": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "loggamma": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "logit": {
+        "double": [
+            "c_double",
+            "c_double"
+        ],
+        "float": [
+            "c_float",
+            "c_float"
+        ]
+    },
+    "lpmv": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "mathieu_a": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "mathieu_b": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "modstruve": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nbdtr": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "nbdtrc": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "nbdtri": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "nbdtrik": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nbdtrin": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ncfdtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ncfdtri": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ncfdtridfd": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ncfdtridfn": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ncfdtrinc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nctdtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nctdtridf": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nctdtrinc": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nctdtrit": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ndtr": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "ndtri": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nrdtrimn": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "nrdtrisd": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "obl_cv": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "owens_t": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "pdtr": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "pdtrc": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "pdtri": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "pdtrik": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "poch": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "pro_cv": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "pseudo_huber": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "psi": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "radian": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "rel_entr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "rgamma": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "round": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "sindg": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "smirnov": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "smirnovi": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "spence": {
+        "double": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "stdtr": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "stdtridf": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "stdtrit": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "struve": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "tandg": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "tklmbda": {
+        "": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "xlog1py": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "xlogy": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "y0": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "y1": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    },
+    "yn": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ],
+        "long": [
+            "c_double",
+            "c_long",
+            "c_double"
+        ]
+    },
+    "yv": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "yve": {
+        "double": [
+            "c_double",
+            "c_double",
+            "c_double"
+        ]
+    },
+    "zetac": {
+        "": [
+            "c_double",
+            "c_double"
+        ]
+    }
+}
