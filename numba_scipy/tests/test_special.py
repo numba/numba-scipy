@@ -8,7 +8,6 @@ import numba
 import scipy.special as sc
 import numba_scipy.special
 from numba_scipy.special import signatures as special_signatures
-from numba_scipy.special import types as special_types
 
 NUMBA_TYPES_TO_TEST_POINTS = {
     numba.types.float64: np.array(
@@ -19,7 +18,7 @@ NUMBA_TYPES_TO_TEST_POINTS = {
         [-100.0, -10.0, -1.0, -0.1, 0.0, 0.1, 1.0, 10.0, 100.0],
         dtype=np.float32
     ),
-    special_types.numba_long: np.array(
+    numba.types.long_: np.array(
         [-100, -10, -1, 0, 1, 10, 100],
         dtype=np.int_
     )

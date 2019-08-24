@@ -16,8 +16,6 @@ import ctypes
 import numba
 from numba.extending import get_cython_function_address
 
-from .types import numba_long
-
 name_to_numba_signatures = {{
     {NAME_TO_NUMBA_SIGNATURES}
 }}
@@ -30,13 +28,13 @@ name_and_types_to_pointer = {{
 CYTHON_TO_NUMBA = {
     'double': 'numba.types.float64',
     'float': 'numba.types.float32',
-    'long': 'numba_long',
+    'long': 'numba.types.long_',
 }
 
 NUMBA_TO_CTYPES = {
     'numba.types.float64': 'ctypes.c_double',
     'numba.types.float32': 'ctypes.c_float',
-    'numba_long': 'ctypes.c_long',
+    'numba.types.long_': 'ctypes.c_long',
 }
 
 

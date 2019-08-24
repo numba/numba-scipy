@@ -2,7 +2,6 @@ import numba
 import scipy.special as sc
 
 from . import signatures
-from . import types
 
 
 def choose_kernel(name, all_signatures):
