@@ -113,7 +113,7 @@ Warnings used in :mod:`scipy.stats`
 """
 
 
-from .stats import *
+
 from .distributions import *
 
 __all__ = [s for s in dir() if not s.startswith("_")]  # Remove dunders.
