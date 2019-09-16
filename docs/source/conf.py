@@ -5,6 +5,7 @@
 # http://www.sphinx-doc.org/en/master/config
 
 import sys
+import os
 import sphinx_bootstrap_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
