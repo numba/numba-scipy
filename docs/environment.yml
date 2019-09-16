@@ -1,0 +1,14 @@
+name: numba-scipy-docs
+channels:
+  - defaults
+  - numba
+
+dependencies:
+  - python=3.7
+  - pip
+  - setuptools
+  - numba
+  - scipy
+  - sphinx
+  - pip:
+    - sphinx-bootstrap-theme
