@@ -14,5 +14,5 @@ containing your work.  When you are done, open a pull request.
 
 # Further reading
 
-This project follows the Numba [contributing guide](
-http://numba.pydata.org/numba-doc/latest/developer/contributing.html).
+See the [contributing guide](
+https://numba-scipy.readthedocs.io/en/latest/developer/contributing.html).
