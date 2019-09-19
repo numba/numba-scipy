@@ -1,7 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import versioneer
 
+
 _install_requires = ['scipy>=0.16', 'numba>=0.45']
+
 
 metadata = dict(
     name='numba-scipy',
@@ -26,14 +28,16 @@ metadata = dict(
     author_email="numba-users@continuum.io",
     url="https://github.com/numba/numba-scipy",
     download_url="https://github.com/numba/numba-scipy",
-    packages=['numba_scipy'],
+    packages=find_packages(),
     setup_requires=[],
     install_requires=_install_requires,
     license="BSD",
     zip_safe=False,
-    )
+)
+
 
 with open('README.rst') as f:
     metadata['long_description'] = f.read()
+
 
 setup(**metadata)
