@@ -29,7 +29,7 @@ conda list
 conda remove --all -q -y -n $CONDA_ENV
 
 # Create a base env
-conda create -n $CONDA_ENV -q -y python=$PYTHON numpy=$NUMPY scipy=$SCIPY pytest pip
+conda create -n $CONDA_ENV -q -y python=$PYTHON numpy=$NUMPY scipy=$SCIPY pip
 
 # Activate
 set +v
@@ -42,11 +42,13 @@ set -v
 if [[ $(uname) == Linux ]]; then
     if [[ "$CONDA_SUBDIR" == "linux-32" || "$BITS32" == "yes" ]] ; then
         $CONDA_INSTALL -c numba numba
+        # Work around https://github.com/pytest-dev/pytest/issues/3280
+        $CONDA_INSTALL pytest attrs==19.1.0
     else
-        $CONDA_INSTALL numba
+        $CONDA_INSTALL numba pytest
     fi
 elif  [[ $(uname) == Darwin ]]; then
-    $CONDA_INSTALL numba
+    $CONDA_INSTALL numba pytest
 fi
 
 # environment dump for debug
