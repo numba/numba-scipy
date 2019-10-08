@@ -7,209 +7,355 @@
 Supported functions from ``scipy.special``
 ==========================================
 
-The following functions are supported (with noted limitations):
+The following functions are supported:
 
-* :func:`scipy.special.eval_chebyc` (first 3 arguments only)
-* :func:`scipy.special.eval_chebys` (first 3 arguments only)
-* :func:`scipy.special.eval_chebyt` (first 3 arguments only)
-* :func:`scipy.special.eval_chebyu` (first 3 arguments only)
-* :func:`scipy.special.eval_gegenbauer` (first 4 arguments only)
-* :func:`scipy.special.eval_genlaguerre` (first 4 arguments only)
-* :func:`scipy.special.eval_jacobi` (first 5 arguments only)
-* :func:`scipy.special.eval_laguerre` (first 3 arguments only)
-* :func:`scipy.special.eval_legendre` (first 3 arguments only)
-* :func:`scipy.special.eval_sh_chebyt` (first 3 arguments only)
-* :func:`scipy.special.eval_sh_chebyu` (first 3 arguments only)
-* :func:`scipy.special.eval_sh_jacobi` (first 5 arguments only)
-* :func:`scipy.special.eval_sh_legendre` (first 3 arguments only)
-* :func:`scipy.special.bdtr` (first 4 arguments only)
-* :func:`scipy.special.bdtrc` (first 4 arguments only)
-* :func:`scipy.special.bdtri` (first 4 arguments only)
-* :func:`scipy.special.expit` (first 2 arguments only)
-* :func:`scipy.special.expn` (first 3 arguments only)
-* :func:`scipy.special.kn` (first 3 arguments only)
-* :func:`scipy.special.logit` (first 2 arguments only)
-* :func:`scipy.special.nbdtr` (first 4 arguments only)
-* :func:`scipy.special.nbdtrc` (first 4 arguments only)
-* :func:`scipy.special.nbdtri` (first 4 arguments only)
-* :func:`scipy.special.pdtr` (first 3 arguments only)
-* :func:`scipy.special.pdtrc` (first 3 arguments only)
-* :func:`scipy.special.pdtri` (first 3 arguments only)
-* :func:`scipy.special.smirnov` (first 3 arguments only)
-* :func:`scipy.special.smirnovi` (first 3 arguments only)
-* :func:`scipy.special.yn` (first 3 arguments only)
-* :func:`scipy.special.eval_chebyc` (first 3 arguments only)
-* :func:`scipy.special.eval_chebys` (first 3 arguments only)
-* :func:`scipy.special.eval_chebyt` (first 3 arguments only)
-* :func:`scipy.special.eval_chebyu` (first 3 arguments only)
-* :func:`scipy.special.eval_gegenbauer` (first 4 arguments only)
-* :func:`scipy.special.eval_genlaguerre` (first 4 arguments only)
-* :func:`scipy.special.eval_jacobi` (first 5 arguments only)
-* :func:`scipy.special.eval_laguerre` (first 3 arguments only)
-* :func:`scipy.special.eval_legendre` (first 3 arguments only)
-* :func:`scipy.special.eval_sh_chebyt` (first 3 arguments only)
-* :func:`scipy.special.eval_sh_chebyu` (first 3 arguments only)
-* :func:`scipy.special.eval_sh_jacobi` (first 5 arguments only)
-* :func:`scipy.special.eval_sh_legendre` (first 3 arguments only)
-* :func:`scipy.special.bdtr` (first 4 arguments only)
-* :func:`scipy.special.bdtrc` (first 4 arguments only)
-* :func:`scipy.special.bdtri` (first 4 arguments only)
-* :func:`scipy.special.dawsn` (first 2 arguments only)
-* :func:`scipy.special.erf` (first 2 arguments only)
-* :func:`scipy.special.erfc` (first 2 arguments only)
-* :func:`scipy.special.erfcx` (first 2 arguments only)
-* :func:`scipy.special.erfi` (first 2 arguments only)
-* :func:`scipy.special.exp1` (first 2 arguments only)
-* :func:`scipy.special.expi` (first 2 arguments only)
-* :func:`scipy.special.expit` (first 2 arguments only)
-* :func:`scipy.special.expm1` (first 2 arguments only)
-* :func:`scipy.special.expn` (first 3 arguments only)
-* :func:`scipy.special.gamma` (first 2 arguments only)
-* :func:`scipy.special.hyp0f1` (first 3 arguments only)
-* :func:`scipy.special.hyp1f1` (first 4 arguments only)
-* :func:`scipy.special.hyp2f1` (first 5 arguments only)
-* :func:`scipy.special.iv` (first 3 arguments only)
-* :func:`scipy.special.ive` (first 3 arguments only)
-* :func:`scipy.special.jv` (first 3 arguments only)
-* :func:`scipy.special.jve` (first 3 arguments only)
-* :func:`scipy.special.kn` (first 3 arguments only)
-* :func:`scipy.special.kv` (first 3 arguments only)
-* :func:`scipy.special.kve` (first 3 arguments only)
-* :func:`scipy.special.log1p` (first 2 arguments only)
-* :func:`scipy.special.log_ndtr` (first 2 arguments only)
-* :func:`scipy.special.loggamma` (first 2 arguments only)
-* :func:`scipy.special.logit` (first 2 arguments only)
-* :func:`scipy.special.nbdtr` (first 4 arguments only)
-* :func:`scipy.special.nbdtrc` (first 4 arguments only)
-* :func:`scipy.special.nbdtri` (first 4 arguments only)
-* :func:`scipy.special.ndtr` (first 2 arguments only)
-* :func:`scipy.special.pdtr` (first 3 arguments only)
-* :func:`scipy.special.pdtrc` (first 3 arguments only)
-* :func:`scipy.special.pdtri` (first 3 arguments only)
-* :func:`scipy.special.psi` (first 2 arguments only)
-* :func:`scipy.special.rgamma` (first 2 arguments only)
-* :func:`scipy.special.smirnov` (first 3 arguments only)
-* :func:`scipy.special.smirnovi` (first 3 arguments only)
-* :func:`scipy.special.spence` (first 2 arguments only)
-* :func:`scipy.special.xlog1py` (first 3 arguments only)
-* :func:`scipy.special.xlogy` (first 3 arguments only)
-* :func:`scipy.special.yn` (first 3 arguments only)
-* :func:`scipy.special.yv` (first 3 arguments only)
-* :func:`scipy.special.yve` (first 3 arguments only)
-* :func:`scipy.special.agm` (first 3 arguments only)
-* :func:`scipy.special.bdtrik` (first 4 arguments only)
-* :func:`scipy.special.bdtrin` (first 4 arguments only)
-* :func:`scipy.special.bei` (first 2 arguments only)
-* :func:`scipy.special.beip` (first 2 arguments only)
-* :func:`scipy.special.ber` (first 2 arguments only)
-* :func:`scipy.special.berp` (first 2 arguments only)
-* :func:`scipy.special.besselpoly` (first 4 arguments only)
-* :func:`scipy.special.beta` (first 3 arguments only)
-* :func:`scipy.special.betainc` (first 4 arguments only)
-* :func:`scipy.special.betaincinv` (first 4 arguments only)
-* :func:`scipy.special.betaln` (first 3 arguments only)
-* :func:`scipy.special.binom` (first 3 arguments only)
-* :func:`scipy.special.boxcox` (first 3 arguments only)
-* :func:`scipy.special.boxcox1p` (first 3 arguments only)
-* :func:`scipy.special.btdtr` (first 4 arguments only)
-* :func:`scipy.special.btdtri` (first 4 arguments only)
-* :func:`scipy.special.btdtria` (first 4 arguments only)
-* :func:`scipy.special.btdtrib` (first 4 arguments only)
-* :func:`scipy.special.cbrt` (first 2 arguments only)
-* :func:`scipy.special.chdtr` (first 3 arguments only)
-* :func:`scipy.special.chdtrc` (first 3 arguments only)
-* :func:`scipy.special.chdtri` (first 3 arguments only)
-* :func:`scipy.special.chdtriv` (first 3 arguments only)
-* :func:`scipy.special.chndtr` (first 4 arguments only)
-* :func:`scipy.special.chndtridf` (first 4 arguments only)
-* :func:`scipy.special.chndtrinc` (first 4 arguments only)
-* :func:`scipy.special.chndtrix` (first 4 arguments only)
-* :func:`scipy.special.cosdg` (first 2 arguments only)
-* :func:`scipy.special.cosm1` (first 2 arguments only)
-* :func:`scipy.special.cotdg` (first 2 arguments only)
-* :func:`scipy.special.ellipe` (first 2 arguments only)
-* :func:`scipy.special.ellipeinc` (first 3 arguments only)
-* :func:`scipy.special.ellipkinc` (first 3 arguments only)
-* :func:`scipy.special.ellipkm1` (first 2 arguments only)
-* :func:`scipy.special.entr` (first 2 arguments only)
-* :func:`scipy.special.eval_hermite` (first 3 arguments only)
-* :func:`scipy.special.eval_hermitenorm` (first 3 arguments only)
-* :func:`scipy.special.exp10` (first 2 arguments only)
-* :func:`scipy.special.exp2` (first 2 arguments only)
-* :func:`scipy.special.exprel` (first 2 arguments only)
-* :func:`scipy.special.fdtr` (first 4 arguments only)
-* :func:`scipy.special.fdtrc` (first 4 arguments only)
-* :func:`scipy.special.fdtri` (first 4 arguments only)
-* :func:`scipy.special.fdtridfd` (first 4 arguments only)
-* :func:`scipy.special.gammainc` (first 3 arguments only)
-* :func:`scipy.special.gammaincc` (first 3 arguments only)
-* :func:`scipy.special.gammainccinv` (first 3 arguments only)
-* :func:`scipy.special.gammaincinv` (first 3 arguments only)
-* :func:`scipy.special.gammaln` (first 2 arguments only)
-* :func:`scipy.special.gammasgn` (first 2 arguments only)
-* :func:`scipy.special.gdtr` (first 4 arguments only)
-* :func:`scipy.special.gdtrc` (first 4 arguments only)
-* :func:`scipy.special.gdtria` (first 4 arguments only)
-* :func:`scipy.special.gdtrib` (first 4 arguments only)
-* :func:`scipy.special.gdtrix` (first 4 arguments only)
-* :func:`scipy.special.huber` (first 3 arguments only)
-* :func:`scipy.special.hyperu` (first 4 arguments only)
-* :func:`scipy.special.i0` (first 2 arguments only)
-* :func:`scipy.special.i0e` (first 2 arguments only)
-* :func:`scipy.special.i1` (first 2 arguments only)
-* :func:`scipy.special.i1e` (first 2 arguments only)
-* :func:`scipy.special.inv_boxcox` (first 3 arguments only)
-* :func:`scipy.special.inv_boxcox1p` (first 3 arguments only)
-* :func:`scipy.special.it2struve0` (first 2 arguments only)
-* :func:`scipy.special.itmodstruve0` (first 2 arguments only)
-* :func:`scipy.special.itstruve0` (first 2 arguments only)
-* :func:`scipy.special.j0` (first 2 arguments only)
-* :func:`scipy.special.j1` (first 2 arguments only)
-* :func:`scipy.special.k0` (first 2 arguments only)
-* :func:`scipy.special.k0e` (first 2 arguments only)
-* :func:`scipy.special.k1` (first 2 arguments only)
-* :func:`scipy.special.k1e` (first 2 arguments only)
-* :func:`scipy.special.kei` (first 2 arguments only)
-* :func:`scipy.special.keip` (first 2 arguments only)
-* :func:`scipy.special.ker` (first 2 arguments only)
-* :func:`scipy.special.kerp` (first 2 arguments only)
-* :func:`scipy.special.kl_div` (first 3 arguments only)
-* :func:`scipy.special.kolmogi` (first 2 arguments only)
-* :func:`scipy.special.kolmogorov` (first 2 arguments only)
-* :func:`scipy.special.lpmv` (first 4 arguments only)
-* :func:`scipy.special.mathieu_a` (first 3 arguments only)
-* :func:`scipy.special.mathieu_b` (first 3 arguments only)
-* :func:`scipy.special.modstruve` (first 3 arguments only)
-* :func:`scipy.special.nbdtrik` (first 4 arguments only)
-* :func:`scipy.special.nbdtrin` (first 4 arguments only)
-* :func:`scipy.special.ncfdtr` (first 5 arguments only)
-* :func:`scipy.special.ncfdtri` (first 5 arguments only)
-* :func:`scipy.special.ncfdtridfd` (first 5 arguments only)
-* :func:`scipy.special.ncfdtridfn` (first 5 arguments only)
-* :func:`scipy.special.ncfdtrinc` (first 5 arguments only)
-* :func:`scipy.special.nctdtr` (first 4 arguments only)
-* :func:`scipy.special.nctdtridf` (first 4 arguments only)
-* :func:`scipy.special.nctdtrinc` (first 4 arguments only)
-* :func:`scipy.special.nctdtrit` (first 4 arguments only)
-* :func:`scipy.special.ndtri` (first 2 arguments only)
-* :func:`scipy.special.nrdtrimn` (first 4 arguments only)
-* :func:`scipy.special.nrdtrisd` (first 4 arguments only)
-* :func:`scipy.special.obl_cv` (first 4 arguments only)
-* :func:`scipy.special.owens_t` (first 3 arguments only)
-* :func:`scipy.special.pdtrik` (first 3 arguments only)
-* :func:`scipy.special.poch` (first 3 arguments only)
-* :func:`scipy.special.pro_cv` (first 4 arguments only)
-* :func:`scipy.special.pseudo_huber` (first 3 arguments only)
-* :func:`scipy.special.radian` (first 4 arguments only)
-* :func:`scipy.special.rel_entr` (first 3 arguments only)
-* :func:`scipy.special.round` (first 2 arguments only)
-* :func:`scipy.special.sindg` (first 2 arguments only)
-* :func:`scipy.special.stdtr` (first 3 arguments only)
-* :func:`scipy.special.stdtridf` (first 3 arguments only)
-* :func:`scipy.special.stdtrit` (first 3 arguments only)
-* :func:`scipy.special.struve` (first 3 arguments only)
-* :func:`scipy.special.tandg` (first 2 arguments only)
-* :func:`scipy.special.tklmbda` (first 3 arguments only)
-* :func:`scipy.special.y0` (first 2 arguments only)
-* :func:`scipy.special.y1` (first 2 arguments only)
-* :func:`scipy.special.zetac` (first 2 arguments only)
+* :py:data:`scipy.special.agm`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.bdtr`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,long_,float64)``
+* :py:data:`scipy.special.bdtrc`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,long_,float64)``
+* :py:data:`scipy.special.bdtri`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,long_,float64)``
+* :py:data:`scipy.special.bdtrik`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.bdtrin`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.bei`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.beip`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.ber`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.berp`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.besselpoly`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.beta`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.betainc`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.betaincinv`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.betaln`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.binom`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.boxcox`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.boxcox1p`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.btdtr`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.btdtri`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.btdtria`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.btdtrib`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.cbrt`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.chdtr`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.chdtrc`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.chdtri`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.chdtriv`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.chndtr`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.chndtridf`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.chndtrinc`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.chndtrix`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.cosdg`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.cosm1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.cotdg`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.dawsn`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.ellipe`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.ellipeinc`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.ellipkinc`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.ellipkm1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.entr`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.erf`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.erfc`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.erfcx`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.erfi`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.eval_chebyc`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_chebys`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_chebyt`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_chebyu`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_gegenbauer`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,float64,float64)``
+* :py:data:`scipy.special.eval_genlaguerre`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,float64,float64)``
+* :py:data:`scipy.special.eval_hermite`
+    Supported signature(s): ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_hermitenorm`
+    Supported signature(s): ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_jacobi`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``, ``float64(long_,float64,float64,float64)``
+* :py:data:`scipy.special.eval_laguerre`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_legendre`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_sh_chebyt`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_sh_chebyu`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.eval_sh_jacobi`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``, ``float64(long_,float64,float64,float64)``
+* :py:data:`scipy.special.eval_sh_legendre`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.exp1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.exp10`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.exp2`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.expi`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.expit`
+    Supported signature(s): ``float64(float64)``, ``float32(float32)``
+* :py:data:`scipy.special.expm1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.expn`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.exprel`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.fdtr`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.fdtrc`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.fdtri`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.fdtridfd`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.gamma`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.gammainc`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.gammaincc`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.gammainccinv`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.gammaincinv`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.gammaln`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.gammasgn`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.gdtr`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.gdtrc`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.gdtria`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.gdtrib`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.gdtrix`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.huber`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.hyp0f1`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.hyp1f1`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.hyp2f1`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``
+* :py:data:`scipy.special.hyperu`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.i0`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.i0e`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.i1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.i1e`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.inv_boxcox`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.inv_boxcox1p`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.it2struve0`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.itmodstruve0`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.itstruve0`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.iv`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.ive`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.j0`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.j1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.jv`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.jve`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.k0`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.k0e`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.k1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.k1e`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.kei`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.keip`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.ker`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.kerp`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.kl_div`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.kn`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.kolmogi`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.kolmogorov`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.kv`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.kve`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.log1p`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.log_ndtr`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.loggamma`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.logit`
+    Supported signature(s): ``float64(float64)``, ``float32(float32)``
+* :py:data:`scipy.special.lpmv`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.mathieu_a`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.mathieu_b`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.modstruve`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.nbdtr`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,long_,float64)``
+* :py:data:`scipy.special.nbdtrc`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,long_,float64)``
+* :py:data:`scipy.special.nbdtri`
+    Supported signature(s): ``float64(float64,float64,float64)``, ``float64(long_,long_,float64)``
+* :py:data:`scipy.special.nbdtrik`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.nbdtrin`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.ncfdtr`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``
+* :py:data:`scipy.special.ncfdtri`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``
+* :py:data:`scipy.special.ncfdtridfd`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``
+* :py:data:`scipy.special.ncfdtridfn`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``
+* :py:data:`scipy.special.ncfdtrinc`
+    Supported signature(s): ``float64(float64,float64,float64,float64)``
+* :py:data:`scipy.special.nctdtr`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.nctdtridf`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.nctdtrinc`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.nctdtrit`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.ndtr`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.ndtri`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.nrdtrimn`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.nrdtrisd`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.obl_cv`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.owens_t`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.pdtr`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.pdtrc`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.pdtri`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.pdtrik`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.poch`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.pro_cv`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.pseudo_huber`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.psi`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.radian`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.rel_entr`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.rgamma`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.round`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.sindg`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.smirnov`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.smirnovi`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.spence`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.stdtr`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.stdtridf`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.stdtrit`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.struve`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.tandg`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.tklmbda`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.xlog1py`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.xlogy`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.y0`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.y1`
+    Supported signature(s): ``float64(float64)``
+* :py:data:`scipy.special.yn`
+    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+* :py:data:`scipy.special.yv`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.yve`
+    Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.zetac`
+    Supported signature(s): ``float64(float64)``

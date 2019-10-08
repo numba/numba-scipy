@@ -63,7 +63,7 @@ DOCS_TEMPLATE = '''
 Supported functions from ``scipy.special``
 ==========================================
 
-The following functions are supported (with noted limitations):
+The following functions are supported:
 
 '''
 
@@ -166,11 +166,20 @@ def generate_signatures_file(signature_to_pointer):
 def generate_docs(signature_to_pointer):
     with open(os.path.join(DOCS_DIR, 'special.rst'), 'w') as f:
         f.write(DOCS_TEMPLATE)
+        funcs = collections.defaultdict(list)
+        # sorted for stability
         for x in sorted(set(tuple(signature_to_pointer.keys()))):
             name = de_mangle_function_name(x[0])
-            argc = len(x) - 1
-            item = "* :func:`scipy.special.{}` (first {} arguments only)\n"
-            f.write(item.format(name, argc))
+            sig = [t.replace('numba.types.','') for t in x[1:]]
+            retty, *argtys = sig
+            sig_str = '``{}({})``'.format(retty, ','.join(argtys))
+            funcs[name].append(sig_str)
+        # re-sort based on de-mangled function names so same named functions
+        # appear together
+        for k, v in sorted(funcs.items()):
+            tmplt = ("* :py:data:`scipy.special.{}`\n    "
+                     "Supported signature(s): {}\n")
+            f.write(tmplt.format(k, ', '.join(v)))
 
 
 def main():
