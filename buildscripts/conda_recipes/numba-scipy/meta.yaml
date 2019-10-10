@@ -8,6 +8,7 @@ source:
 build:
   number: {{ GIT_DESCRIBE_NUMBER|int }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
+  noarch: python
 
 requirements:
   # build and run dependencies are duplicated to avoid setuptools issues
