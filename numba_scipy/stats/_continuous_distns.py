@@ -2,12 +2,16 @@
 
 from ._distn_infrastructure import (get_distribution_names, rv_continuous,
                                     rv_continuous_spec)
+from .utils import overload_pyclass
+import scipy.stats as scipy_stats
+from numba.extending import overload
+
 from numba import jitclass
 import numpy as np
 
 
 @jitclass(spec=rv_continuous_spec + [])
-class norm_gen(rv_continuous):
+class norm_gen_jit(rv_continuous):
     r"""A normal continuous random variable.
     The location (``loc``) keyword specifies the mean.
     The scale (``scale``) keyword specifies the standard deviation.
@@ -24,8 +28,13 @@ class norm_gen(rv_continuous):
     def _rvs(self, size):
         return np.random.standard_normal(size)
 
-norm = norm_gen(name='norm')
 
+@overload(scipy_stats.norm)
+def stats_norm():
+    pass
+
+def register_overloads():
+    overload_pyclass(scipy_stats.norm_gen, norm_gen_jit)
 
 # Collect names of classes and objects in this module.
 # Temporarily disabled due to Numba issue #?? preventing the recognition of
