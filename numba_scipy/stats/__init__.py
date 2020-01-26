@@ -114,8 +114,8 @@ Warnings used in :mod:`scipy.stats`
 
 
 
-from .distributions import *
-
-__all__ = [s for s in dir() if not s.startswith("_")]  # Remove dunders.
-
-
+# from .distributions import *
+#
+# __all__ = [s for s in dir() if not s.startswith("_")]  # Remove dunders.
+#
+#

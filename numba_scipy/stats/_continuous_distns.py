@@ -29,12 +29,9 @@ class norm_gen_jit(rv_continuous):
         return np.random.standard_normal(size)
 
 
-@overload(scipy_stats.norm)
-def stats_norm():
-    pass
 
 def register_overloads():
-    overload_pyclass(scipy_stats.norm_gen, norm_gen_jit)
+    overload_pyclass(scipy_stats._continuous_distns.norm_gen, norm_gen_jit)
 
 # Collect names of classes and objects in this module.
 # Temporarily disabled due to Numba issue #?? preventing the recognition of
@@ -47,4 +44,4 @@ def register_overloads():
 # __all__ = _distn_names + _distn_gen_names
 
 _distn_names = ['norm']
-_distn_gen_names = [norm_gen]
+_distn_gen_names = [norm_gen_jit]

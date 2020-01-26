@@ -1,6 +1,9 @@
 from numba.targets.registry import cpu_target
 from numba.extending import typeof_impl
-from numba import types
+from numba.jitclass.base import imp_dtor
+from numba.targets.imputils import lower_constant
+from numba import cgutils, types
+
 
 def overload_pyclass(pyclass: type, jitclass: type):
     """
@@ -14,6 +17,7 @@ def overload_pyclass(pyclass: type, jitclass: type):
         "jitclass argument must be a Numba jitclass (not an instance)")
     _overload_pyclass1(pyclass, jitclass)
     _overload_pyclass2(pyclass, jitclass)
+    _lower_constant_jitclass(jitclass)
     unbox_pyclass(pyclass, jitclass)
 
 
@@ -34,7 +38,50 @@ def _overload_pyclass2(pyclass: type, jitclass: type):
     typingctx.insert_global(pyclass, jitclass.class_type)
 
 
-from numba.jitclass.base import imp_dtor
+def _mangle_attr(name):
+    """
+    Mangle attributes.
+    The resulting name does not startswith an underscore '_'.
+    """
+    return 'm_' + name
+
+
+def _lower_constant_jitclass(jitclass: type):
+
+    @lower_constant(jitclass.class_type.instance_type)
+    def _lower_constant_class_instance(context, builder, typ, pyval):
+        # Allocate the instance
+        inst_typ = typ
+
+        alloc_type = context.get_data_type(inst_typ.get_data_type())
+        alloc_size = context.get_abi_sizeof(alloc_type)
+
+        meminfo = context.nrt.meminfo_alloc_dtor(builder, context.get_constant(types.uintp, alloc_size),
+            imp_dtor(context, builder.module, inst_typ), )
+        data_pointer = context.nrt.meminfo_data(builder, meminfo)
+        data_pointer = builder.bitcast(data_pointer, alloc_type.as_pointer())
+
+        # Nullify all data
+        builder.store(cgutils.get_null_value(alloc_type), data_pointer)
+
+        inst_struct = context.make_helper(builder, inst_typ)
+        inst_struct.meminfo = meminfo
+        inst_struct.data = data_pointer
+
+        # Assign value
+        for attr_name in typ.struct:
+            data = context.make_data_helper(builder, typ.get_data_type(),
+                                            ref=data_pointer)
+            attr_type = typ.struct[attr_name]
+            attr_pyval = getattr(pyval, attr_name)
+            val = context.get_constant_generic(builder, attr_type, attr_pyval)
+            setattr(data, _mangle_attr(attr_name), val)
+
+        # Prepare return value
+        ret = inst_struct._getvalue()
+
+        context.nrt.incref(builder, typ, ret)
+        return ret
 
 
 def unbox_pyclass(pyclass: type, jitclass: type):
@@ -50,7 +97,7 @@ def unbox_pyclass(pyclass: type, jitclass: type):
     del _unboxers.functions[types.ClassInstanceType]
 
     @unbox(types.ClassInstanceType)
-    def unbox_interval(typ, obj, c):
+    def unbox_impl(typ, obj, c):
         """
         Convert a Interval object to a native interval structure.
         """
