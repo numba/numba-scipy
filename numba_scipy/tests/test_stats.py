@@ -5,20 +5,19 @@ from scipy.stats import norm
 from numba import njit
 import numpy as np
 import unittest
-import scipy
-from numba_scipy.stats._continuous_distns import norm_gen_jit
-from numba_scipy.stats.utils import overload_pyclass
 # overload_pyclass(scipy.stats._continuous_distns.norm_gen, norm_gen_jit)
 
 # Normal distribution tests
 rv = norm
+
+
 def get_norm_rvs(seed, mean, stdev, size):
     np.random.seed(0)
     return rv.rvs(mean, stdev, size)
 
+
 def get_norm_rvs_kwargs(seed, mean, stdev, size):
     np.random.seed(0)
-    #return rv.rvs(loc=0, scale=1, size=20)
     return rv.rvs(loc=mean, scale=stdev, size=size)
 
 
@@ -31,16 +30,12 @@ class TestNorm(unittest.TestCase):
         py_fc = get_norm_rvs_kwargs
         jit_fc = njit(py_fc)
         py_res, jit_res = py_fc(0, 0, 1, 20), jit_fc(0, 0, 1, 20)
-        print(py_res, jit_res, py_res.dtype, jit_res.dtype)
-        print("all close 14", np.allclose(py_res, jit_res, atol=0.00000000000001))
-        print("all close 15", np.allclose(py_res, jit_res, atol=0.000000000000001))
-        print("all close 16", np.allclose(py_res, jit_res, atol=0.0000000000000001))
         with self.subTest("Values"):
             # disabling `array_equal` because for some reason 32-bit linux
             # produces floats that are not equal, even though identical to 14
             # decimal points
-            #self.assertTrue(np.array_equal(py_res, jit_res))
-            self.assertTrue(np.allclose(py_res, jit_res, atol=0.0000000000000001))
+            # self.assertTrue(np.array_equal(py_res, jit_res))
+            self.assertTrue(np.allclose(py_res, jit_res, atol=1e-16))
 
     def test_rvs_pos_args(self):
         """
@@ -50,14 +45,6 @@ class TestNorm(unittest.TestCase):
         py_fc = get_norm_rvs
         jit_fc = njit(py_fc)
         py_res, jit_res = py_fc(0, 0, 1, 20), jit_fc(0, 0, 1, 20)
-        print(py_res, jit_res, py_res.dtype, jit_res.dtype)
-
-        print("equality", py_res==jit_res)
-        print("all close 10", np.allclose(py_res, jit_res, atol=0.000001))
-        print("all close 10", np.allclose(py_res, jit_res, atol=0.0000000001))
-        print("all close 14", np.allclose(py_res, jit_res, atol=0.00000000000001))
-        print("all close 15", np.allclose(py_res, jit_res, atol=0.000000000000001))
-        print("all close 16", np.allclose(py_res, jit_res, atol=0.0000000000000001))
 
         with self.subTest("Shapes"):
             self.assertEqual(py_res.shape, jit_res.shape)
@@ -65,8 +52,8 @@ class TestNorm(unittest.TestCase):
             # disabling `array_equal` because for some reason 32-bit linux
             # produces floats that are not equal, even though identical to 14
             # decimal points
-            #self.assertTrue(np.array_equal(py_res, jit_res))
-            self.assertTrue(np.allclose(py_res, jit_res, atol=0.0000000000000001))
+            # self.assertTrue(np.array_equal(py_res, jit_res))
+            self.assertTrue(np.allclose(py_res, jit_res, atol=1e-16))
 
 
 if __name__ == '__main__':
