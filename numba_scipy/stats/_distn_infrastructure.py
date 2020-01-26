@@ -18,9 +18,8 @@ class rv_generic:
         #if seed is not None:
         #    raise NotImplementedError("Seed parameter not yet implemented")
 
-    # These are actually called, and should not be overwritten if you
-    # want to keep error checking.
-    def rvs(self, args=(), loc=0, scale=1, size=1):
+
+    def rvs(self, loc=0, scale=1, size=1):
         """
         Random variates of given type.
 
