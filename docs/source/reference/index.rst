@@ -9,3 +9,4 @@ The ``numba-scipy`` reference manual.
    :caption: Contents:
 
    special.rst
+   stats.rst
