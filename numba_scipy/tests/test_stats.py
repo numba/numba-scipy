@@ -31,7 +31,7 @@ class TestNorm(unittest.TestCase):
         py_fc = get_norm_rvs_kwargs
         jit_fc = njit(py_fc)
         py_res, jit_res = py_fc(0, 0, 1, 20), jit_fc(0, 0, 1, 20)
-        print(py_res, jit_res)
+        print(py_res, jit_res, py_res.dtype, jit_res.dtype)
         with self.subTest("Values"):
             self.assertTrue(np.array_equal(py_res, jit_res))
 
@@ -43,7 +43,7 @@ class TestNorm(unittest.TestCase):
         py_fc = get_norm_rvs
         jit_fc = njit(py_fc)
         py_res, jit_res = py_fc(0, 0, 1, 20), jit_fc(0, 0, 1, 20)
-        print(py_res, jit_res)
+        print(py_res, jit_res, py_res.dtype, jit_res.dtype)
         with self.subTest("Shapes"):
             self.assertEqual(py_res.shape, jit_res.shape)
         with self.subTest("Values"):
