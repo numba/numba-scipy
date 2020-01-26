@@ -116,8 +116,3 @@ def register_overloads():
     from ._continuous_distns import register_overloads as cont_reg_overloads
     cont_reg_overloads()
 
-# from .distributions import *
-#
-# __all__ = [s for s in dir() if not s.startswith("_")]  # Remove dunders.
-#
-#

@@ -27,21 +27,3 @@ class norm_gen_jit(rv_continuous):
     """
     def _rvs(self, size):
         return np.random.standard_normal(size)
-
-
-
-def register_overloads():
-    overload_pyclass(scipy_stats._continuous_distns.norm_gen, norm_gen_jit)
-
-# Collect names of classes and objects in this module.
-# Temporarily disabled due to Numba issue #?? preventing the recognition of
-# distribution instances
-
-# pairs = list(globals().items())
-
-# _distn_names, _distn_gen_names = get_distribution_names(pairs, rv_continuous)
-
-# __all__ = _distn_names + _distn_gen_names
-
-_distn_names = ['norm']
-_distn_gen_names = [norm_gen_jit]

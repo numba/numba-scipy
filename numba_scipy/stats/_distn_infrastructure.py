@@ -193,4 +193,3 @@ class rv_continuous(rv_generic):
         if name is None:
             name = 'Distribution'
         self.name = name
-
