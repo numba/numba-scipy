@@ -46,7 +46,9 @@ class TestNorm(unittest.TestCase):
         print(py_res, jit_res, py_res.dtype, jit_res.dtype)
 
         print("equality", py_res==jit_res)
-        print("all close", np.allclose(py_res, jit_res))
+        print("all close 10", np.allclose(py_res, jit_res, atol=0.000001))
+        print("all close 10", np.allclose(py_res, jit_res, atol=0.0000000001))
+        print("all close 14", np.allclose(py_res, jit_res, atol=0.00000000000001))
 
         with self.subTest("Shapes"):
             self.assertEqual(py_res.shape, jit_res.shape)
