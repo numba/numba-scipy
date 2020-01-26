@@ -8,7 +8,7 @@ import unittest
 import scipy
 from numba_scipy.stats._continuous_distns import norm_gen_jit
 from numba_scipy.stats.utils import overload_pyclass
-overload_pyclass(scipy.stats._continuous_distns.norm_gen, norm_gen_jit)
+# overload_pyclass(scipy.stats._continuous_distns.norm_gen, norm_gen_jit)
 
 # Normal distribution tests
 rv = norm
