@@ -10,6 +10,6 @@ def _init_extension():
     This entry_point is called by Numba when it initializes.
     '''
     from . import special
-    from .stats._continuous_distns import register_overloads
+    from .stats import register_overloads
 
     register_overloads()
