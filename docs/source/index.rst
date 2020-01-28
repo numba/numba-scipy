@@ -16,7 +16,7 @@ with ``numba-scipy`` perhaps start with the :doc:`User manual <user/index>`.
 
    user/index.rst
    reference/index.rst
-   developer/contributing.rst
+   developer/index.rst
    release-notes.rst
 
 .. not needed?
