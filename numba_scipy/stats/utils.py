@@ -128,6 +128,17 @@ def unbox_pyclass(pyclass: type, jitclass: type):
         inst_struct.meminfo = meminfo
         inst_struct.data = data_pointer
 
+        # Assign value
+        for attr_name in typ.struct:
+            data = context.make_data_helper(builder, typ.get_data_type(),
+                                            ref=data_pointer)
+            attr_type = typ.struct[attr_name]
+            generic_type = type(attr_type)
+            unbox_fc = _unboxers.functions[generic_type]
+            attr_obj = c.pyapi.object_getattr_string(obj, attr_name)
+            native_val = unbox_fc(attr_type, attr_obj, c)
+            setattr(data, _mangle_attr(attr_name), native_val.value)
+
         # Prepare return value
         ret = inst_struct._getvalue()
 
