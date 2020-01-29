@@ -16,9 +16,12 @@ the internal structure.
 Each statistical distribution is represented by one class, for example
 ``numba_scipy.stats._continuous_distns.norm_gen_jit``. Following SciPy's convention (and breaking with Python's) these
 classes have lowercase names. These classes can be thought of as generators or generic distributions,
-since the actual distribution---with a concrete value for their parameters)---are the instances of these classes.
+since the actual distributions---those with a concrete value for their parameters---are the instances of these classes.
+This is why in SciPy one uses, for example, ``stats.norm`` and not ``stats.norm_gen``. In SciPy, ``stats.norm``
+is an instance of ``stats.norm_gen`` with the default value ``loc=0`` and ``scale=1`` for its parameters.
 
-Each of these generator classes inherits from a parent class, ``rv_continuous`` or ``rv_discrete`` for continuous and
+
+In both numba-scipy and SciPy, each of these generator classes inherits from a parent class, ``rv_continuous`` or ``rv_discrete`` for continuous and
 discrete distributions respectively. In turn, these inherit from ``rv_generic``. These classes contain the public
 methods of all distributions, for example
 
