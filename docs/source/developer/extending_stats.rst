@@ -50,6 +50,10 @@ There are three main areas in which numba-scipy stats can be extended:
 - to add a new public method for the base classes
 - to add a new distribution.
 
+.. StabilityWarning::
+   numba-scipy is currently in an early stage, and its internal structure---including the descriptions below---are
+   subject to change.
+
 Adding a new private method
 ---------------------------
 
