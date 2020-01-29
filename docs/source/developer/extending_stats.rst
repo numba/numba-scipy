@@ -50,7 +50,7 @@ There are three main areas in which numba-scipy stats can be extended:
 - to add a new public method for the base classes
 - to add a new distribution.
 
-.. StabilityWarning::
+.. note::
    numba-scipy is currently in an early stage, and its internal structure---including the descriptions below---are
    subject to change.
 
@@ -85,7 +85,7 @@ In case ``rv_continuous`` did not have ``pdf`` already implemented, then it woul
 Adding a new public method
 ---------------------------
 
-Continuing with our example, if ``rv_continous`` did not implement ``pdf`` yet::
+Continuing with our example, if ``rv_continuous`` did not implement ``pdf`` yet::
 
     class rv_continuous(rv_generic):
         def __init__(self, name=None, seed=None):
@@ -114,3 +114,16 @@ class::
     class norm_gen_jit(rv_continuous):
         def _rvs(self, size):
             return np.random.standard_normal(size)
+
+Additionally, we need to register the newly implemented distribution with Numba, so that it knows that it should
+overload SciPy's version when working inside a jitted function. In order to do this, we look for the
+``register_overloads`` function at the bottom of ``_continuous_distns.py`` or ``_discrete_distns.py``, and add a line
+with the following structure::
+
+    overload_pyclass(<pyclass>, <jit_class>)
+
+For example::
+
+    overload_pyclass(scipy_stats._continuous_distns.norm_gen, norm_gen_jit)
+
+
