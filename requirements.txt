@@ -1,2 +1,2 @@
 numba
-scipy
+scipy==1.4.1
