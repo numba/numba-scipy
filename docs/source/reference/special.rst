@@ -83,6 +83,8 @@ The following functions are supported:
     Supported signature(s): ``float64(float64)``
 * :py:data:`scipy.special.ellipeinc`
     Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.ellipk`
+    Supported signature(s): ``float64(float64)``
 * :py:data:`scipy.special.ellipkinc`
     Supported signature(s): ``float64(float64,float64)``
 * :py:data:`scipy.special.ellipkm1`
@@ -300,9 +302,9 @@ The following functions are supported:
 * :py:data:`scipy.special.owens_t`
     Supported signature(s): ``float64(float64,float64)``
 * :py:data:`scipy.special.pdtr`
-    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+    Supported signature(s): ``float64(float64,float64)``
 * :py:data:`scipy.special.pdtrc`
-    Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
+    Supported signature(s): ``float64(float64,float64)``
 * :py:data:`scipy.special.pdtri`
     Supported signature(s): ``float64(float64,float64)``, ``float64(long_,float64)``
 * :py:data:`scipy.special.pdtrik`
@@ -343,6 +345,10 @@ The following functions are supported:
     Supported signature(s): ``float64(float64)``
 * :py:data:`scipy.special.tklmbda`
     Supported signature(s): ``float64(float64,float64)``
+* :py:data:`scipy.special.voigt_profile`
+    Supported signature(s): ``float64(float64,float64,float64)``
+* :py:data:`scipy.special.wrightomega`
+    Supported signature(s): ``float64(float64)``
 * :py:data:`scipy.special.xlog1py`
     Supported signature(s): ``float64(float64,float64)``
 * :py:data:`scipy.special.xlogy`
