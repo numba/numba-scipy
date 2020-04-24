@@ -4,8 +4,8 @@ import numpy as np
 import unittest
 
 ## necessary to run tests locally if numba-scipy is not installed
-# from numba_scipy.stats import register_overloads
-# register_overloads()
+from numba_scipy.stats import register_overloads
+register_overloads()
 
 # Normal distribution tests
 rv = norm
