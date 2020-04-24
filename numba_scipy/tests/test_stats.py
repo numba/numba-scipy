@@ -1,15 +1,11 @@
-# from numba_scipy.stats import norm
-# from numba_scipy.stats._continuous_distns import norm_gen
-
 from scipy.stats import norm
 from numba import njit
 import numpy as np
 import unittest
-## necessary to run tests locally
-# import scipy
-# from numba_scipy.stats._continuous_distns import overload_pyclass, norm_gen_jit
-# overload_pyclass(scipy.stats._continuous_distns.norm_gen, norm_gen_jit)
-##
+
+## necessary to run tests locally if numba-scipy is not installed
+# from numba_scipy.stats import register_overloads
+# register_overloads()
 
 # Normal distribution tests
 rv = norm
