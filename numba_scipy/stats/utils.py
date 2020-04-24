@@ -1,8 +1,8 @@
-from numba.targets.registry import cpu_target
+from numba.core.registry import cpu_target
 from numba.extending import typeof_impl
-from numba.jitclass.base import imp_dtor
-from numba.targets.imputils import lower_constant
-from numba import cgutils, types
+from numba.experimental.jitclass.base import imp_dtor
+from numba.core.imputils import lower_constant
+from numba.core import cgutils, types
 
 
 def overload_pyclass(pyclass: type, jitclass: type):
@@ -90,10 +90,10 @@ def unbox_pyclass(pyclass: type, jitclass: type):
 
     """
     from numba.extending import unbox, NativeValue
-    from numba import cgutils
+    from numba.core import cgutils
 
     # undo automatic registration of unbox function
-    from numba.pythonapi import _unboxers
+    from numba.core.pythonapi import _unboxers
     del _unboxers.functions[types.ClassInstanceType]
 
     @unbox(types.ClassInstanceType)

@@ -6,7 +6,7 @@ from .utils import overload_pyclass
 import scipy.stats as scipy_stats
 from numba.extending import overload
 
-from numba import jitclass
+from numba.experimental import jitclass
 import numpy as np
 
 
