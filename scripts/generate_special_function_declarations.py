@@ -43,7 +43,8 @@ If you want to regenerate this file, run the script
 import ctypes
 
 import numba
-from numba.extending import get_cython_function_address
+
+from .special_function_pointers import get_special_function_pointer
 
 name_to_numba_signatures = {{
     {NAME_TO_NUMBA_SIGNATURES}
@@ -136,17 +137,12 @@ def generate_signatures_file(signature_to_pointer):
         )
 
         key = "('{}', {})".format(name, ', '.join(signature[1:]))
-        address = (
-            "get_cython_function_address('scipy.special.cython_special', '{}')"
-            .format(mangled_name)
-        )
         ctypes_signature = [NUMBA_TO_CTYPES[t] for t in signature]
-        ctypes_cast = (
-            'ctypes.CFUNCTYPE({})'.format(', '.join(ctypes_signature))
+        pointer = 'get_special_function_pointer(({},), "{}")'.format(
+            ', '.join(ctypes_signature),
+            mangled_name,
         )
-        name_and_types_to_pointer.append(
-            '{}: {}({})'.format(key, ctypes_cast, address)
-        )
+        name_and_types_to_pointer.append('{}: {}'.format(key, pointer))
 
     name_to_numba_signatures = [
         "'{}': [{}]".format(name, ', '.join(signatures))
