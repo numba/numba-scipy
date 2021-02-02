@@ -6,7 +6,7 @@ on:
   # Run this workflow every time a PR is merged to main or a release tag is added
   push:
     branches:
-      - main
+      - master
     tags:
       - '*'
 
