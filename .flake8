@@ -3,6 +3,7 @@ ignore =
     E20,   # Extra space in brackets
     E231,E241,  # Multiple spaces around ","
     E26,   # Comments
+    E501,  # line too long
     E731,  # Assigning lambda expression
     E741,  # Ambiguous variable names
     W503,  # line break before binary operator
