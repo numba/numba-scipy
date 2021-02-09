@@ -30,7 +30,7 @@ jobs:
           conda install -q conda-build
           conda create -n numba-scipy -c numba python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest
           conda activate numba-scipy
-          pip install -e .
+          pip install --no-deps -e .
       - name: Lint with flak8e
         run: |
           source "$CONDA/etc/profile.d/conda.sh"
