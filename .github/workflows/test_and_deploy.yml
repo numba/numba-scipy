@@ -41,14 +41,6 @@ jobs:
           source "$CONDA/etc/profile.d/conda.sh"
           conda activate numba-scipy
           bash ./buildscripts/incremental/test.sh
-      ##- name: Coveralls
-      ##  env:
-      ##    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      ##  run: |
-      ##    source "$CONDA/etc/profile.d/conda.sh"
-      ##    conda activate mg
-      ##    conda install -c conda-forge coveralls
-      ##    coveralls --service=github
       - name: Conda Build
         run: |
           source "$CONDA/etc/profile.d/conda.sh"
