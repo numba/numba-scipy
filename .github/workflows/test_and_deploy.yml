@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, macos-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -58,7 +58,7 @@ jobs:
           retention-days: 7
 
   test_pyver:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, macos-latest]
     needs: build
     strategy:
       matrix:
@@ -92,7 +92,7 @@ jobs:
           conda activate numba-scipy
 
   dev_deploy:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, macos-latest]
     needs: test_pyver
     if: (github.ref == 'refs/heads/master') || contains(github.ref, 'refs/tags/')
     env:
