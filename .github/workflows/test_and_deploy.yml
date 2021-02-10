@@ -62,7 +62,7 @@ jobs:
     strategy:
       matrix:
         pyver: [3.6, 3.7, 3.8]
-        runs-on: [macos-latest, ubuntu-latest]
+        runs-on: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.runs-on }}
     steps:
       - name: Download build artifact
