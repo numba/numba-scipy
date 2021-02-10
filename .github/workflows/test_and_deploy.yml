@@ -21,29 +21,28 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Setup conda env
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          activate-environment: test_env
+      - name: Install dependencies
+        shell: bash -l {0}
         run: |
-          source "$CONDA/etc/profile.d/conda.sh"
-          conda config --set always_yes yes --set changeps1 no
-          conda update -q conda
-          conda info -a
-          conda install -q conda-build
-          conda create -n numba-scipy -c numba python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest
-          conda activate numba-scipy
+          conda install -c numba conda-build python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest pip
           pip install --no-deps -e .
       - name: Lint with flak8e
+        shell: bash -l {0}
         run: |
-          source "$CONDA/etc/profile.d/conda.sh"
-          conda activate numba-scipy
           flake8 numba_scipy
       - name: Pytest
+        shell: bash -l {0}
         run: |
-          source "$CONDA/etc/profile.d/conda.sh"
-          conda activate numba-scipy
           bash ./buildscripts/incremental/test.sh
       - name: Conda Build
+        shell: bash -l {0}
         run: |
-          source "$CONDA/etc/profile.d/conda.sh"
           conda build -c defaults -c numba --python ${{ env.MAIN_PYVER }} buildscripts/conda_recipes/numba-scipy/
           # This doesn't rebuild, but simply computes the name of the file that was previously built
           OUTPUT=$(conda build --output -c defaults -c numba --python ${{ env.MAIN_PYVER }} buildscripts/conda_recipes/numba-scipy/)
@@ -70,13 +69,16 @@ jobs:
         with:
           name: built_package
           path: ./artifact_storage
-      - name: Setup conda env
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          activate-environment: test_env
+      - name: Install dependencies and build artifact
+        shell: bash -l {0}
         run: |
-          source "$CONDA/etc/profile.d/conda.sh"
-          conda config --set always_yes yes --set changeps1 no
-          conda update -q conda
-          conda create -n numba-scipy -c numba python=${{ matrix.pyver }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest
-          conda activate numba-scipy
+          conda install -c numba python=${{ matrix.pyver }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest
           # Install built_package
           BUILT_PKG=$(ls ./artifact_storage | head -1)
           conda install ./artifact_storage/$BUILT_PKG
@@ -85,9 +87,9 @@ jobs:
           conda update -c numba numba-scipy
           conda list
       - name: Pytest
+        shell: bash -l {0}
         run: |
-          source "$CONDA/etc/profile.d/conda.sh"
-          conda activate numba-scipy
+          bash ./buildscripts/incremental/test.sh
 
   dev_deploy:
     runs-on: ubuntu-latest
