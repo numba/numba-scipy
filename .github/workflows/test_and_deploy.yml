@@ -1,0 +1,115 @@
+name: Test and Deploy
+
+on:
+  # Run this workflow every time a PR is opened or a new commit is pushed to the PR
+  pull_request:
+  # Run this workflow every time a PR is merged to main or a release tag is added
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+
+env:
+  MAIN_PYVER: 3.8
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          activate-environment: test_env
+      - name: Install dependencies
+        shell: bash -l {0}
+        run: |
+          conda install -c numba conda-build python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest pip
+          pip install --no-deps -e .
+      - name: Lint with flake8
+        shell: bash -l {0}
+        run: |
+          flake8 numba_scipy
+      - name: Pytest
+        shell: bash -l {0}
+        run: |
+          bash ./buildscripts/incremental/test.sh
+      - name: Conda Build
+        shell: bash -l {0}
+        run: |
+          conda build -c defaults -c numba --python ${{ env.MAIN_PYVER }} buildscripts/conda_recipes/numba-scipy/
+          # This doesn't rebuild, but simply computes the name of the file that was previously built
+          OUTPUT=$(conda build --output -c defaults -c numba --python ${{ env.MAIN_PYVER }} buildscripts/conda_recipes/numba-scipy/)
+          echo "Path to built package:"
+          echo $OUTPUT
+          echo "CONDA_BUILD_OUTPUT=$OUTPUT" >> $GITHUB_ENV
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: built_package
+          path: ${{ env.CONDA_BUILD_OUTPUT }}
+          retention-days: 7
+
+  test_pyver:
+    needs: build
+    strategy:
+      matrix:
+        pyver: [3.6, 3.7, 3.8]
+        runs-on: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.runs-on }}
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: built_package
+          path: ./artifact_storage
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          activate-environment: test_env
+      - name: Install dependencies and build artifact
+        shell: bash -l {0}
+        run: |
+          conda install -c numba python=${{ matrix.pyver }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest
+          # Install built_package
+          BUILT_PKG=$(ls ./artifact_storage | head -1)
+          conda install ./artifact_storage/$BUILT_PKG
+          conda list
+      - name: Pytest
+        shell: bash -l {0}
+        run: |
+          pytest --pyargs numba_scipy.tests
+
+  dev_deploy:
+    runs-on: ubuntu-latest
+    needs: test_pyver
+    if: (github.ref == 'refs/heads/master') || contains(github.ref, 'refs/tags/')
+    env:
+      AC_LABEL: dev
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: built_package
+          path: ./artifact_storage
+      - name: Determine label
+        if: contains(github.ref, 'refs/tags/')
+        run: |
+          echo "AC_LABEL=numba/label/dev" >> $GITHUB_ENV
+      - name: Deploy to Anaconda Cloud
+        run: |
+          source "$CONDA/etc/profile.d/conda.sh"
+          conda config --set always_yes yes --set changeps1 no
+          conda install -q anaconda-client
+          ls -la ./artifact_storage
+          UPLOAD=$(ls ./artifact_storage | head -1)
+          echo "Uploading $UPLOAD with label=${{ env.AC_LABEL }}"
+          $CONDA/bin/anaconda -t ${{ secrets.ANACONDA_ORG_TOKEN }} upload -u numba -l ${{ env.AC_LABEL }} --no-progress --force --no-register ./artifact_storage/$UPLOAD

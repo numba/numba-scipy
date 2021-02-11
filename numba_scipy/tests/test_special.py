@@ -7,7 +7,6 @@ import numpy as np
 from numpy.testing import assert_allclose
 import numba
 import scipy.special as sc
-import numba_scipy.special
 from numba_scipy.special import signatures as special_signatures
 
 NUMBA_TYPES_TO_TEST_POINTS = {
