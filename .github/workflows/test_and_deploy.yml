@@ -82,9 +82,6 @@ jobs:
           # Install built_package
           BUILT_PKG=$(ls ./artifact_storage | head -1)
           conda install ./artifact_storage/$BUILT_PKG
-          # Install dependencies listed in built package
-          # (This is a workaround because conda does not install dependencies for local file installs)
-          #conda update -c numba numba-scipy
           conda list
       - name: Pytest
         shell: bash -l {0}
