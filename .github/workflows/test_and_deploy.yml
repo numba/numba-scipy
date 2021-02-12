@@ -104,17 +104,15 @@ jobs:
         if: contains(github.ref, 'refs/tags/')
         run: |
           echo "AC_LABEL=numba/label/dev" >> $GITHUB_ENV
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          auto-update-conda: true
-          auto-activate-base: false
-          activate-environment: test_env
       - name: Deploy to Anaconda Cloud
         shell: bash -l {0}
+        # workaround issues with setup-miniconda an anaconda-client
         run: |
+          source "$CONDA/etc/profile.d/conda.sh"
+          conda config --set always_yes yes --set changeps1 no
+          conda config --set always_yes yes --set changeps1 no
           conda install -q anaconda-client
           ls -la ./artifact_storage
           UPLOAD=$(ls ./artifact_storage | head -1)
           echo "Uploading $UPLOAD with label=${{ env.AC_LABEL }}"
-          anaconda -t ${{ secrets.ANACONDA_ORG_TOKEN }} upload -u numba -l ${{ env.AC_LABEL }} --no-progress --force --no-register ./artifact_storage/$UPLOAD
+          $CONDA/bin/anaconda -t ${{ secrets.ANACONDA_ORG_TOKEN }} upload -u numba -l ${{ env.AC_LABEL }} --no-progress --force --no-register ./artifact_storage/$UPLOAD
