@@ -1,0 +1,35 @@
+name: Deploy Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy_pypi:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.0.1
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          activate-environment: test_env
+      - name: Install dependencies
+        shell: bash -l {0}
+        run: |
+          conda install -c numba python=3.8 numba>=0.45 'scipy>=0.16,<1.4' wheel
+      - name: Build PyPI artifacts
+        shell: bash -l {0}
+        run: |
+          python setup.py sdist bdist_wheel
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.4.2
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_SECRET }}
