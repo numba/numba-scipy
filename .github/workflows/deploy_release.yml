@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         shell: bash -l {0}
         run: |
-          conda install -c numba python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy>=0.16,<1.4' wheel
+          conda install -c numba python=3.8 numba>=0.45 'scipy>=0.16,<1.4' wheel
       - name: Build PyPI artifacts
         run: |
           python setup.py sdist bdist_wheel
