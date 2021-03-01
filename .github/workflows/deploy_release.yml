@@ -25,6 +25,7 @@ jobs:
         run: |
           conda install -c numba python=3.8 numba>=0.45 'scipy>=0.16,<1.4' wheel
       - name: Build PyPI artifacts
+        shell: bash -l {0}
         run: |
           python setup.py sdist bdist_wheel
       - name: Publish to PyPI
