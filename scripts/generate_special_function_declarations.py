@@ -84,14 +84,14 @@ def parse_capsule_name(capsule):
     # There isn't a Python equivalent to `PyCapsule_GetName`, so
     # resort to a hacky method for finding the signature.
     match = re.match(
-        '\<capsule object "(?P<signature>.+)" at 0x[a-f0-9]+\>',
+        '<capsule object "(?P<signature>.+)" at 0x[a-f0-9]+>',
         str(capsule),
     )
     if match is None:
         raise ValueError('Unexpected capsule name {}'.format(capsule))
 
     signature = match.group('signature')
-    match = re.match('(?P<return_type>.+) \((?P<arg_types>.+)\)', signature)
+    match = re.match('(?P<return_type>.+) ((?P<arg_types>.+))', signature)
     if match is None:
         raise ValueError('Unexpected signature {}'.format(signature))
 
