@@ -30,7 +30,7 @@ def parse_capsule_name(capsule):
         raise ValueError('Unexpected capsule name {}'.format(capsule))
 
     signature = match.group('signature')
-    match = re.match('(?P<return_type>.+) ((?P<arg_types>.+))', signature)
+    match = re.match('(?P<return_type>.+) \\((?P<arg_types>.+)\\)', signature)
     if match is None:
         raise ValueError('Unexpected signature {}'.format(signature))
 
