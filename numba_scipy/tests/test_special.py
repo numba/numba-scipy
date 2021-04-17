@@ -3,6 +3,7 @@ import warnings
 
 import pytest
 
+
 import numpy as np
 from numpy.testing import assert_allclose
 import numba
@@ -45,11 +46,9 @@ SKIP_LIST = {
 
 def compare_functions(args, scipy_func, numba_func):
     for arg in args:
-        overload_value = numba_func(*arg)
-        scipy_value = scipy_func(*arg)
-        if np.isnan(overload_value):
-            assert np.isnan(scipy_value)
-        else:
+        for arg in [arg, [np.repeat(a, 2) for a in arg]]:
+            overload_value = numba_func(*arg)
+            scipy_value = scipy_func(*arg)
             rtol = 2**8 * np.finfo(scipy_value.dtype).eps
             assert_allclose(overload_value, scipy_value, atol=0, rtol=rtol)
 
