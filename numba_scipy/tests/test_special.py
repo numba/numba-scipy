@@ -90,14 +90,14 @@ def test_parse_capsule_name_with_invalid_signature():
     assert "Unexpected signature" in str(excinfo.value)
 
 
-def test_de_mange_function_name():
+def test_de_mangle_function_name():
     mangled_name = "__pyx_fuse_0pdtr"
     received = de_mangle_function_name(mangled_name)
     expected = "pdtr"
     assert expected == received
 
 
-def test_de_mange_function_name_with_invalid_name():
+def test_de_mangle_function_name_with_invalid_name():
     with pytest.raises(ValueError) as excinfo:
         # The empty string was the only thing that the regex didn't recognise.
         mangled_name = ""
