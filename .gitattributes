@@ -1,2 +1,1 @@
 numba_scipy/_version.py export-subst
-numba_scipy/special/signatures.py binary

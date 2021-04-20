@@ -16,6 +16,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scipy-version: [">=0.16,<1.4", ">=1.4"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -30,7 +33,7 @@ jobs:
       - name: Install dependencies
         shell: bash -l {0}
         run: |
-          conda install -c numba conda-build python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest pip
+          conda install -c numba conda-build python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy${{ matrix.scipy-version }}' flake8 pytest pip
           pip install --no-deps -e .
       - name: Lint with flake8
         shell: bash -l {0}
@@ -60,6 +63,7 @@ jobs:
     needs: build
     strategy:
       matrix:
+        scipy-version: [">=0.16,<1.4", ">=1.4"]
         pyver: [3.6, 3.7, 3.8]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.runs-on }}
@@ -78,7 +82,7 @@ jobs:
       - name: Install dependencies and build artifact
         shell: bash -l {0}
         run: |
-          conda install -c numba python=${{ matrix.pyver }} numba>=0.45 'scipy>=0.16,<1.4' flake8 pytest
+          conda install -c numba python=${{ matrix.pyver }} numba>=0.45 'scipy${{ matrix.scipy-version }}' flake8 pytest
           # Install built_package
           BUILT_PKG=$(ls ./artifact_storage | head -1)
           conda install ./artifact_storage/$BUILT_PKG
