@@ -14,7 +14,7 @@ from numba_scipy.special.signatures import (parse_capsule_name,
                                             de_mangle_function_name,
                                             get_signatures_from_pyx_capi,
                                             generate_signatures_dicts,
-                                           )
+                                            )
 
 NUMBA_TYPES_TO_TEST_POINTS = {
     numba.types.float64: np.array(
@@ -69,7 +69,8 @@ def get_parametrize_arguments():
 
 
 def test_parse_capsule_name():
-    input_capsule = '<capsule object "double (double, double, double, int __pyx_skip_dispatch)" at 0x7f8c8d5f5150>'
+    input_capsule = ('<capsule object "double (double, double, double, '
+                     'int __pyx_skip_dispatch)" at 0x7f8c8d5f5150>')
     expected = ['double', 'double', 'double', 'double']
     received = parse_capsule_name(input_capsule)
     assert received == expected
@@ -107,7 +108,7 @@ def test_de_mange_function_name_with_invalid_name():
 @patch("numba_scipy.special.signatures.cysc")
 def test_get_signatures_from_pyx_capi(cysc_mock):
     capsule = ('<capsule object "double (double, double, double, '
-                     'int __pyx_skip_dispatch)" at 0x7f8c8d5f5150>')
+               'int __pyx_skip_dispatch)" at 0x7f8c8d5f5150>')
     mangled_name = "__pyx_fuse_0pdtr"
     cysc_mock.__pyx_capi__ = {
         mangled_name: capsule
