@@ -145,6 +145,8 @@ def test_ensure_signatures_generated():
     assert len(name_to_numba_signatures) != 0
     assert len(name_and_types_to_pointer) != 0
     assert len(signature_to_pointer) != 0
+    assert (len(name_and_types_to_pointer) ==
+            len(signature_to_pointer))
 
 
 @pytest.mark.parametrize(
