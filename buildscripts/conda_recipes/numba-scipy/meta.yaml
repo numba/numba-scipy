@@ -18,16 +18,16 @@ requirements:
   host:
     - python
     - numba
-    - scipy
+    - scipy<=1.6.2
     - setuptools
   run:
     - python
     - numba
-    - scipy
+    - scipy<=1.6.2
 
 test:
   requires:
-    - scipy
+    - scipy<=1.6.2
     - pytest
     - setuptools
     - faulthandler             # [py27 and (not (armv6l or armv7l))]
