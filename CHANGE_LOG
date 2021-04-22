@@ -6,7 +6,7 @@ This release adds:
   Willard)
 * Github Actions CI
 
-Importantly, the dynamic generation of the signatures makes numba-scipy now
+Importantly, the dynamic generation of the signatures now makes numba-scipy
 compatible with multiple SciPy releases simultaneously.
 
 Contributors:
