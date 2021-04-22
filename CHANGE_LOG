@@ -2,7 +2,7 @@ Version 0.3
 -----------
 This release adds:
 
-* Dynamic generation of `scipy.special.signatures` (with thanks to Brandon T.
+* Dynamic generation of ``scipy.special.signatures`` (with thanks to Brandon T.
   Willard)
 * Github Actions CI
 
