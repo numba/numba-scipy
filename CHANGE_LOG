@@ -1,7 +1,18 @@
 Version 0.3
 -----------
+This release adds:
 
-In development
+* Dynamic generation of ``scipy.special.signatures`` (with thanks to Brandon T.
+  Willard)
+* Github Actions CI
+
+Importantly, the dynamic generation of the signatures now makes numba-scipy
+compatible with multiple SciPy releases simultaneously.
+
+Contributors:
+
+* Brandon T. Willard
+* Valentin Haenel
 
 
 Version 0.2
