@@ -9,7 +9,8 @@ This release adds:
 Importantly, the dynamic generation of the signatures makes numba-scipy now
 compatible with multiple SciPy releases simultaneously.
 
-Contributors
+Contributors:
+
 * Brandon T. Willard
 * Stuart Archibald
 * Valentin Haenel
