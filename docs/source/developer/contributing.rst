@@ -10,13 +10,13 @@ improvements are encouraged.  If you have questions, don't hesitate to ask them
 Communication
 -------------
 
-Mailing-list
-''''''''''''
+Discourse
+'''''''''
 
-There is a public mailing-list that you can e-mail at numba-users@anaconda.com.
-If you have any questions about contributing to numba-scipy, it is ok to ask
-them on this mailing-list.  You can subscribe and read the archives on
-`Google Groups <https://groups.google.com/a/continuum.io/forum/#!forum/numba-users>`_.
+The Numba community uses Discourse for asking questions and having discussions
+about numba-scip. There are various categories available and it can be reached
+at: `numba.discourse.group <https://numba.discourse.group/>`_. There is also a
+category for `numba-scipy <INSERT LINK HERE>`_.
 
 Real-time Chat
 ''''''''''''''
