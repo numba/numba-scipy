@@ -14,7 +14,7 @@ Discourse
 '''''''''
 
 The Numba community uses Discourse for asking questions and having discussions
-about numba-scip. There are various categories available and it can be reached
+about numba-scipy. There are various categories available and it can be reached
 at: `numba.discourse.group <https://numba.discourse.group/>`_. There is also a
 category for `numba-scipy <https://numba.discourse.group/c/numba/numba-scipy/15>`_.
 
