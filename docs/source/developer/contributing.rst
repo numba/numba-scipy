@@ -10,8 +10,8 @@ improvements are encouraged.  If you have questions, don't hesitate to ask them
 Communication
 -------------
 
-Discourse
-'''''''''
+Contact
+'''''''
 
 The Numba community uses Discourse for asking questions and having discussions
 about numba-scipy. There are various categories available and it can be reached
