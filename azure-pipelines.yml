@@ -31,7 +31,7 @@ jobs:
 - template: buildscripts/azure/azure-windows.yml
   parameters:
     name: Windows
-    vmImage: vs2017-win2016
+    vmImage: windows-2019
     matrix:
       py37_np116_sp11:
         PYTHON: '3.7'
