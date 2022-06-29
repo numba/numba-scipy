@@ -6,7 +6,7 @@ In development
 Version 0.3.1
 -------------
 
-This is a maintenace release that:
+This is a maintenance release that:
 
 * Updates the maximum SciPy dependency to 1.7.3.
 * Updates Azure CI.
