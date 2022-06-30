@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scipy-version: [">=0.16,<1.4", ">=1.4,<=1.6.2"]
+        scipy-version: [">=0.16,<1.4", ">=1.4,<=1.7.3"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -63,7 +63,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        scipy-version: [">=0.16,<1.4", ">=1.4,<=1.6.2"]
+        scipy-version: [">=0.16,<1.4", ">=1.4,<=1.7.3"]
         pyver: [3.6, 3.7, 3.8]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.runs-on }}

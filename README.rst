@@ -16,6 +16,9 @@ It uses the LLVM compiler project to generate machine code from Python syntax.
 For more information about Numba, see the Numba homepage:
 http://numba.pydata.org
 
+For more information about numba-scipy see:
+https://numba-scipy.readthedocs.io/en/latest/index.html
+
 Dependencies
 ============
 
