@@ -107,7 +107,7 @@ jobs:
       - name: Determine label
         if: contains(github.ref, 'refs/tags/')
         run: |
-          echo "AC_LABEL=numba/label/dev" >> $GITHUB_ENV
+          echo "AC_LABEL=main" >> $GITHUB_ENV
       - name: Deploy to Anaconda Cloud
         shell: bash -l {0}
         # workaround issues with setup-miniconda an anaconda-client
