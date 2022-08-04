@@ -145,7 +145,7 @@ code review UIs).
 Stability
 '''''''''
 
-The repository's ``master`` branch is expected to be stable at all times.
+The repository's ``main`` branch is expected to be stable at all times.
 This translates into the fact that the test suite passes without errors
 on all supported platforms (see below).  This also means that a pull request
 also needs to pass the test suite before it is merged in.
@@ -155,7 +155,7 @@ also needs to pass the test suite before it is merged in.
 Platform support
 ''''''''''''''''
 
-Every commit to the master branch is automatically tested on a selection of
+Every commit to the ``main`` branch is automatically tested on a selection of
 platforms. `Azure <https://dev.azure.com/numba/numba/_build>`_ is used to to
 provide public continuous integration information for as many combinations as
 can be supported by the service. If you see problems on platforms with which you
