@@ -20,6 +20,12 @@ jobs:
       matrix:
         scipy-version: [">=0.16,<1.4", ">=1.4,<=1.7.3"]
     steps:
+      - name: Install glibc-tools
+        shell: bash -l {0}
+        run: |
+          if [[ $(uname) == Linux ]]; then
+            sudo apt-get install glibc-tools
+          fi
       - name: Checkout
         uses: actions/checkout@v2
         with:
