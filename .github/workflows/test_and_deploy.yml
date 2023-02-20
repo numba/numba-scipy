@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scipy-version: [">=0.16,<1.4", ">=1.4,<1.10.0"]
+        scipy-version: [">=0.16,<1.4", ">=1.4,<1.11.0"]
     steps:
       - name: Install glibc-tools
         shell: bash -l {0}
@@ -69,7 +69,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        scipy-version: [">=0.16,<1.4", ">=1.4,<1.10.0"]
+        scipy-version: [">=0.16,<1.4", ">=1.4,<1.11.0"]
         pyver: [3.6, 3.7, 3.8]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.runs-on }}
