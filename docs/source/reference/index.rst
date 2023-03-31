@@ -8,4 +8,5 @@ The ``numba-scipy`` reference manual.
    :maxdepth: 2
    :caption: Contents:
 
+   sparse.rst
    special.rst
