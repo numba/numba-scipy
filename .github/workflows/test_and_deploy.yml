@@ -19,6 +19,11 @@ jobs:
     strategy:
       matrix:
         scipy-version: [">=0.16,<1.4", ">=1.4,<1.11.0"]
+        include:
+          - scipy-version: ">=0.16,<1.4"
+            numpy-version: "<1.22.0"
+          - scipy-version: ">=1.4,<1.11.0"
+            numpy-version: ">=1.22.0"
     steps:
       - name: Install glibc-tools
         shell: bash -l {0}
@@ -39,7 +44,7 @@ jobs:
       - name: Install dependencies
         shell: bash -l {0}
         run: |
-          conda install -c numba conda-build python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy${{ matrix.scipy-version }}' flake8 pytest pip
+          conda install -c numba conda-build python=${{ env.MAIN_PYVER }} numba>=0.45 'scipy${{ matrix.scipy-version }}' 'numpy${{ matrix.numpy-version }}' flake8 pytest pip
           pip install --no-deps -e .
       - name: Lint with flake8
         shell: bash -l {0}
@@ -72,6 +77,11 @@ jobs:
         scipy-version: [">=0.16,<1.4", ">=1.4,<1.11.0"]
         pyver: [3.6, 3.7, 3.8]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
+        include:
+          - scipy-version: ">=0.16,<1.4"
+            numpy-version: "<1.22.0"
+          - scipy-version: ">=1.4,<1.11.0"
+            numpy-version: ">=1.22.0"
     runs-on: ${{ matrix.runs-on }}
     steps:
       - name: Download build artifact
@@ -88,7 +98,7 @@ jobs:
       - name: Install dependencies and build artifact
         shell: bash -l {0}
         run: |
-          conda install -c numba python=${{ matrix.pyver }} numba>=0.45 'scipy${{ matrix.scipy-version }}' flake8 pytest
+          conda install -c numba python=${{ matrix.pyver }} numba>=0.45 'scipy${{ matrix.scipy-version }}' 'numpy${{ matrix.numpy-version }}' flake8 pytest
           # Install built_package
           BUILT_PKG=$(ls ./artifact_storage | head -1)
           conda install ./artifact_storage/$BUILT_PKG
