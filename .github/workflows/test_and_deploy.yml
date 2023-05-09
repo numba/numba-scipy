@@ -74,6 +74,9 @@ jobs:
         pyver: [3.8, 3.9, "3.10", 3.11]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
         numpy-version: ["<1.22.0", ">=1.22.0"]
+        exclude:
+          - pyver: 3.11
+            numpy-version: "<1.22.0"
         include:
           - pyver: 3.8
             scipy-version: ">=0.16,<1.4"
