@@ -11,19 +11,15 @@ on:
       - '*'
 
 env:
-  MAIN_PYVER: 3.8
+  MAIN_PYVER: "3.10"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scipy-version: [">=0.16,<1.4", ">=1.4,<1.11.0"]
-        include:
-          - scipy-version: ">=0.16,<1.4"
-            numpy-version: "<1.22.0"
-          - scipy-version: ">=1.4,<1.11.0"
-            numpy-version: ">=1.22.0"
+        scipy-version: [">=1.4,<1.11.0"]
+        numpy-version: ["<1.22.0", ">=1.22.0"]
     steps:
       - name: Install glibc-tools
         shell: bash -l {0}
@@ -74,17 +70,27 @@ jobs:
     needs: build
     strategy:
       matrix:
-        scipy-version: [">=0.16,<1.4", ">=1.4,<1.11.0"]
-        pyver: [3.6, 3.7, 3.8, 3.9, "3.10", 3.11]
+        scipy-version: [">=1.4,<1.11.0"]
+        pyver: [3.8, 3.9, "3.10", 3.11]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
+        numpy-version: ["<1.22.0", ">=1.22.0"]
         include:
-          - scipy-version: ">=0.16,<1.4"
+          - pyver: 3.8
+            scipy-version: ">=0.16,<1.4"
             numpy-version: "<1.22.0"
-          - scipy-version: ">=1.4,<1.11.0"
-            numpy-version: ">=1.22.0"
+          # numpy >= 1.22 not supported by scipy <= 1.7.3
+          # scipy >=1.8.0 only support python >=3.8
           - pyver: 3.6
+            scipy-version: ">=0.16,<1.4"
+            numpy-version: "<1.22.0"
+          - pyver: 3.6
+            scipy-version: ">=1.4,<=1.7.3"
             numpy-version: "<1.22.0"
           - pyver: 3.7
+            scipy-version: ">=0.16,<1.4"
+            numpy-version: "<1.22.0"
+          - pyver: 3.7
+            scipy-version: ">=1.4,<=1.7.3"
             numpy-version: "<1.22.0"
 
     runs-on: ${{ matrix.runs-on }}
