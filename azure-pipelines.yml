@@ -5,26 +5,20 @@ jobs:
     name: Linux
     vmImage: ubuntu-22.04
     matrix:
-      py310_np124_sp1_10:
-        PYTHON: '3.10'
-        NUMPY: '1.24'
-        SCIPY: '1.10'
-        CONDA_ENV: 'testenv'
-      py310_np123_sp1_10_32bit:
+      py310_np123_sp1_10:
         PYTHON: '3.10'
         NUMPY: '1.23'
         SCIPY: '1.10'
         CONDA_ENV: 'testenv'
-        BITS32: yes
 
 - template: buildscripts/azure/azure-linux-macos.yml
   parameters:
     name: macOS
     vmImage: macOS-latest
     matrix:
-      py310_np124_sp1_10:
+      py310_np123_sp1_10:
         PYTHON: '3.10'
-        NUMPY: '1.24'
+        NUMPY: '1.23'
         SCIPY: '1.10'
         CONDA_ENV: 'testenv'
 
@@ -33,8 +27,8 @@ jobs:
     name: Windows
     vmImage: windows-2019
     matrix:
-      py310_np124_sp1_10:
+      py310_np123_sp1_10:
         PYTHON: '3.10'
-        NUMPY: '1.24'
+        NUMPY: '1.23'
         SCIPY: '1.10'
         CONDA_ENV: 'testenv'
