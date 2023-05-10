@@ -2,25 +2,24 @@ from setuptools import setup, find_packages
 import versioneer
 
 
-_install_requires = ['scipy>=0.16,<=1.11.0', 'numba>=0.45']
+_install_requires = ["scipy>=0.16,<=1.11.0", "numba>=0.45"]
 
 
 metadata = dict(
-    name='numba-scipy',
+    name="numba-scipy",
     description="numba-scipy extends Numba to make it aware of SciPy",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Topic :: Software Development :: Compilers",
     ],
     package_data={},
@@ -42,8 +41,8 @@ metadata = dict(
 )
 
 
-with open('README.rst') as f:
-    metadata['long_description'] = f.read()
+with open("README.rst") as f:
+    metadata["long_description"] = f.read()
 
 
 setup(**metadata)

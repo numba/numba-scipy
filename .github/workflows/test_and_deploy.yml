@@ -90,56 +90,6 @@ jobs:
             scipy-version: ">=0.16,<1.4"
             numpy-version: "<1.22.0"
             runs-on: windows-latest
-          # numpy >= 1.22 not supported by scipy <= 1.7.3
-          # scipy >=1.8.0 only support python >=3.8
-          - pyver: 3.6
-            scipy-version: ">=0.16,<1.4"
-            numpy-version: "<1.22.0"
-            runs-on: macos-latest
-          - pyver: 3.6
-            scipy-version: ">=1.4,<=1.7.3"
-            numpy-version: "<1.22.0"
-            runs-on: macos-latest
-          - pyver: 3.6
-            scipy-version: ">=0.16,<1.4"
-            numpy-version: "<1.22.0"
-            runs-on: ubuntu-latest
-          - pyver: 3.6
-            scipy-version: ">=1.4,<=1.7.3"
-            numpy-version: "<1.22.0"
-            runs-on: ubuntu-latest
-          - pyver: 3.6
-            scipy-version: ">=0.16,<1.4"
-            numpy-version: "<1.22.0"
-            runs-on: windows-latest
-          - pyver: 3.6
-            scipy-version: ">=1.4,<=1.7.3"
-            numpy-version: "<1.22.0"
-            runs-on: windows-latest
-          - pyver: 3.7
-            scipy-version: ">=0.16,<1.4"
-            numpy-version: "<1.22.0"
-            runs-on: macos-latest
-          - pyver: 3.7
-            scipy-version: ">=1.4,<=1.7.3"
-            numpy-version: "<1.22.0"
-            runs-on: macos-latest
-          - pyver: 3.7
-            scipy-version: ">=0.16,<1.4"
-            numpy-version: "<1.22.0"
-            runs-on: ubuntu-latest
-          - pyver: 3.7
-            scipy-version: ">=1.4,<=1.7.3"
-            numpy-version: "<1.22.0"
-            runs-on: ubuntu-latest
-          - pyver: 3.7
-            scipy-version: ">=0.16,<1.4"
-            numpy-version: "<1.22.0"
-            runs-on: windows-latest
-          - pyver: 3.7
-            scipy-version: ">=1.4,<=1.7.3"
-            numpy-version: "<1.22.0"
-            runs-on: windows-latest
 
     runs-on: ${{ matrix.runs-on }}
     steps:
