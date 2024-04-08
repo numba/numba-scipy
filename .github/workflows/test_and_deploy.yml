@@ -71,7 +71,7 @@ jobs:
     strategy:
       matrix:
         scipy-version: [">=1.4,<1.11.0"]
-        pyver: [3.8, 3.9, "3.10", 3.11]
+        pyver: [3.8, 3.9, "3.10", 3.11, 3.12]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
         numpy-version: ["<1.22.0", ">=1.22.0"]
         exclude:
