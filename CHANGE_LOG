@@ -1,7 +1,20 @@
 Version 0.4
 -----------
 
-In development
+Pull-Requests:
+
+* PR `#62 <https://github.com/numba/numba-scipy/pull/62>`_: open changelog for 0.4 (`esc <https://github.com/esc>`_)
+* PR `#86 <https://github.com/numba/numba-scipy/pull/86>`_: fix the label for uploading tags (`esc <https://github.com/esc>`_)
+* PR `#87 <https://github.com/numba/numba-scipy/pull/87>`_: documentation and CI changes for moving from master to main (`esc <https://github.com/esc>`_)
+* PR `#90 <https://github.com/numba/numba-scipy/pull/90>`_: Bump scipy version to <1.11.0 (`je-cook <https://github.com/je-cook>`_ `esc <https://github.com/esc>`_)
+* PR `#92 <https://github.com/numba/numba-scipy/pull/92>`_: Add basic CSC and CSR sparse matrix support (`brandonwillard <https://github.com/brandonwillard>`_ `esc <https://github.com/esc>`_)
+* PR `#102 <https://github.com/numba/numba-scipy/pull/102>`_: Update versioneer to 3.12 (`esc <https://github.com/esc>`_)
+
+Authors:
+
+* `brandonwillard <https://github.com/brandonwillard>`_
+* `esc <https://github.com/esc>`_
+* `je-cook <https://github.com/je-cook>`_
 
 Version 0.3.1
 -------------
@@ -17,9 +30,9 @@ Contributors:
 * Siu Kwan Lam
 * Valentin Haenel
 
-
 Version 0.3
 -----------
+
 This release adds:
 
 * Dynamic generation of ``scipy.special.signatures`` (with thanks to Brandon T.
@@ -34,9 +47,9 @@ Contributors:
 * Brandon T. Willard
 * Valentin Haenel
 
-
 Version 0.2
 -----------
+
 This release adds the start of real functionality and builds out the project
 infrastructure.
 
@@ -54,9 +67,9 @@ Contributors:
 * Stan Seibert (core dev)
 * Stuart Archibald (core dev)
 
-
 Version 0.1
 -----------
+
 This is the initial demo release.
 
 * Initial Release.
