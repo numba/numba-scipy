@@ -8,6 +8,7 @@ Pull-Requests:
 * PR `#87 <https://github.com/numba/numba-scipy/pull/87>`_: documentation and CI changes for moving from master to main (`esc <https://github.com/esc>`_)
 * PR `#90 <https://github.com/numba/numba-scipy/pull/90>`_: Bump scipy version to <1.11.0 (`je-cook <https://github.com/je-cook>`_ `esc <https://github.com/esc>`_)
 * PR `#92 <https://github.com/numba/numba-scipy/pull/92>`_: Add basic CSC and CSR sparse matrix support (`brandonwillard <https://github.com/brandonwillard>`_ `esc <https://github.com/esc>`_)
+* PR `#102 <https://github.com/numba/numba-scipy/pull/102>`_: Update versioneer to 3.12 (`esc <https://github.com/esc>`_)
 
 Authors:
 
