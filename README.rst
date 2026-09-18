@@ -6,6 +6,8 @@ numba-scipy
    :target: https://gitter.im/numba/numba?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
    :alt: Gitter
 
+**This project is currently on hold as there is no one available for maintenance** (see `#111 <https://github.com/numba/numba-scipy/issues/111>`_).
+
 Numba + SciPy = numba-scipy
 ###########################
 
