@@ -1,8 +1,8 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
+
 import versioneer
 
-
-_install_requires = ["scipy>=0.16,<=1.11.0", "numba>=0.45"]
+_install_requires = ["scipy>=0.16", "numba>=0.45"]
 
 
 metadata = dict(
@@ -20,6 +20,7 @@ metadata = dict(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Software Development :: Compilers",
     ],
     package_data={},

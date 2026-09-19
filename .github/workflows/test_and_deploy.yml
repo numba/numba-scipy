@@ -8,7 +8,7 @@ on:
     branches:
       - main
     tags:
-      - '*'
+      - "*"
 
 env:
   MAIN_PYVER: "3.10"
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scipy-version: [">=1.4,<1.11.0"]
+        scipy-version: [">=1.4"]
         numpy-version: ["<1.22.0", ">=1.22.0"]
     steps:
       - name: Install glibc-tools
@@ -60,7 +60,7 @@ jobs:
           echo $OUTPUT
           echo "CONDA_BUILD_OUTPUT=$OUTPUT" >> $GITHUB_ENV
       - name: Upload build artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: built_package
           path: ${{ env.CONDA_BUILD_OUTPUT }}
@@ -70,8 +70,8 @@ jobs:
     needs: build
     strategy:
       matrix:
-        scipy-version: [">=1.4,<1.11.0"]
-        pyver: [3.8, 3.9, "3.10", 3.11]
+        scipy-version: [">=1.4"]
+        pyver: [3.8, 3.9, "3.10", 3.11, 3.12]
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
         numpy-version: ["<1.22.0", ">=1.22.0"]
         exclude:
@@ -94,7 +94,7 @@ jobs:
     runs-on: ${{ matrix.runs-on }}
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: built_package
           path: ./artifact_storage
@@ -125,7 +125,7 @@ jobs:
       AC_LABEL: dev
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: built_package
           path: ./artifact_storage
